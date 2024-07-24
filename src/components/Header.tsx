@@ -11,24 +11,25 @@ import { useState } from "react";
 import { ROUTES } from "../constants/routes";
 import { Link } from "react-router-dom";
 
+export const menuItems = [
+  {
+    lebel: "Home",
+    path: ROUTES.HOME(),
+  },
+
+  {
+    lebel: "Buble Sort",
+    path: ROUTES.BUBLE_SORT(),
+  },
+  {
+    lebel: "Insertion Sort",
+    path: ROUTES.INSERTION_SORT(),
+  },
+];
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
-    {
-      lebel: "Home",
-      path: ROUTES.HOME(),
-    },
-
-    {
-      lebel: "Buble Sort",
-      path: ROUTES.BUBLE_SORT(),
-    },
-    {
-      lebel: "Insertion Sort",
-      path: ROUTES.INSERTION_SORT(),
-    },
-  ];
   return (
     <Navbar
       disableAnimation
