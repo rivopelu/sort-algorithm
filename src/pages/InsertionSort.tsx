@@ -10,54 +10,123 @@ export default function InsertionSort() {
         <div className=" grid gap-6 h-full">
           <div className="grid lg:grid-cols-2 gap-6 h-full  ">
             <div className="flex flex-col gap-5">
-              <h1 className="text-5xl tracking-widest uppercase font-semibold">
-                Insertion Sort
-              </h1>
-              <article>
-                <h1 className="text-3xl font-bold mb-4">
-                  Algoritma Bubble Sort
+              <article className="bg-white border shadow-md rounded-lg p-6">
+                <h1 className="text-5xl mb-6 tracking-widest uppercase font-semibold">
+                  Insertion Sort
                 </h1>
-
-                <p className="text-lg mb-8">
-                  Bubble sort adalah algoritma pengurutan sederhana yang bekerja
-                  dengan membandingkan dua elemen berdekatan dalam sebuah
-                  daftar. Jika elemen pertama lebih besar dari elemen kedua
-                  (untuk pengurutan ascending), maka keduanya ditukar. Proses
-                  ini diulang terus menerus hingga seluruh daftar terurut.
+                <p className="mb-4">
+                  Insertion sort adalah salah satu algoritma pengurutan yang
+                  sederhana dan mudah dipahami. Algoritma ini bekerja dengan
+                  cara "menyisipkan" setiap elemen pada posisi yang tepat dalam
+                  daftar yang sudah terurut sebagian.
                 </p>
 
-                <div className="mb-8">
-                  <h2 className="text-2xl font-bold mb-4">
-                    Contoh Kode (Python)
-                  </h2>
-                  <pre className="bg-gray-200 p-4 rounded-lg">
-                    {`
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1] :
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-`}
-                  </pre>
-                </div>
+                <h2 className="text-xl font-semibold mb-2">
+                  Cara Kerja Insertion Sort
+                </h2>
+                <ol className="list-decimal list-inside mb-4">
+                  <li>
+                    <strong>Mulai dari Elemen Kedua:</strong> Anggap elemen
+                    pertama di dalam daftar sudah terurut. Mulai dengan elemen
+                    kedua, karena elemen pertama sudah dianggap terurut.
+                  </li>
+                  <li>
+                    <strong>Bandingkan dan Sisipkan:</strong> Ambil elemen kedua
+                    (disebut "kunci"). Bandingkan "kunci" dengan elemen
+                    sebelumnya. Jika "kunci" lebih kecil dari elemen sebelumnya,
+                    geser elemen sebelumnya ke kanan. Ulangi proses ini sampai
+                    menemukan posisi yang tepat untuk "kunci".
+                  </li>
+                  <li>
+                    <strong>Lanjutkan ke Elemen Berikutnya:</strong> Pindah ke
+                    elemen berikutnya di daftar dan ulangi langkah kedua. Terus
+                    lakukan ini sampai semua elemen dalam daftar sudah terurut.
+                  </li>
+                </ol>
 
-                <div>
-                  <h2 className="text-2xl font-bold mb-4">
-                    Penjelasan Lebih Lanjut
-                  </h2>
-                  <ul>
-                    <li>
-                      <b>Sederhana:**</b> Mudah dipahami dan diimplementasikan.
-                    </li>
-                    <li>
-                      <b>Tidak efisien:**</b> Lambat untuk data yang besar.
-                    </li>
-                    <li>
-                      <b>Stabil:**</b> Tidak mengubah urutan elemen yang sama.
-                    </li>
-                  </ul>
-                </div>
+                <h2 className="text-xl font-semibold mb-2">Contoh Sederhana</h2>
+                <p className="mb-4">
+                  Misalkan kita punya daftar angka:{" "}
+                  <code className="bg-gray-200 p-1 rounded">
+                    [5, 2, 4, 6, 1, 3]
+                  </code>
+                </p>
+                <ol className="list-decimal list-inside mb-4">
+                  <li>
+                    Mulai dari elemen kedua: 2
+                    <ul className="list-disc list-inside ml-4">
+                      <li>
+                        2 lebih kecil dari 5, jadi geser 5 ke kanan dan sisipkan
+                        2 di depannya.
+                      </li>
+                      <li>
+                        Daftar sekarang menjadi:{" "}
+                        <code className="bg-gray-200 p-1 rounded">
+                          [2, 5, 4, 6, 1, 3]
+                        </code>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Ambil elemen berikutnya: 4
+                    <ul className="list-disc list-inside ml-4">
+                      <li>
+                        4 lebih kecil dari 5, geser 5 ke kanan dan sisipkan 4 di
+                        depannya.
+                      </li>
+                      <li>
+                        Daftar sekarang menjadi:{" "}
+                        <code className="bg-gray-200 p-1 rounded">
+                          [2, 4, 5, 6, 1, 3]
+                        </code>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Lanjutkan ke elemen berikutnya: 6
+                    <ul className="list-disc list-inside ml-4">
+                      <li>
+                        6 sudah di tempat yang benar, tidak ada perubahan.
+                      </li>
+                      <li>
+                        Daftar sekarang menjadi:{" "}
+                        <code className="bg-gray-200 p-1 rounded">
+                          [2, 4, 5, 6, 1, 3]
+                        </code>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Ambil elemen berikutnya: 1
+                    <ul className="list-disc list-inside ml-4">
+                      <li>
+                        1 lebih kecil dari 6, 5, 4, dan 2, jadi geser semuanya
+                        ke kanan dan sisipkan 1 di depan.
+                      </li>
+                      <li>
+                        Daftar sekarang menjadi:{" "}
+                        <code className="bg-gray-200 p-1 rounded">
+                          [1, 2, 4, 5, 6, 3]
+                        </code>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Ambil elemen terakhir: 3
+                    <ul className="list-disc list-inside ml-4">
+                      <li>
+                        3 lebih kecil dari 6 dan 5, jadi geser mereka ke kanan
+                        dan sisipkan 3 di tempat yang benar.
+                      </li>
+                      <li>
+                        Daftar akhirnya menjadi:{" "}
+                        <code className="bg-gray-200 p-1 rounded">
+                          [1, 2, 3, 4, 5, 6]
+                        </code>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
               </article>
             </div>
             <div className="h-full    flex flex-col gap-3 ">

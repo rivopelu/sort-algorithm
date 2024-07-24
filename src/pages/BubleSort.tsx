@@ -10,54 +10,113 @@ export default function BubleSort() {
         <div className=" grid gap-6 h-full">
           <div className="grid lg:grid-cols-2 gap-6 h-full  ">
             <div className="flex flex-col gap-5">
-              <h1 className="text-5xl tracking-widest uppercase font-semibold">
-                Buble Sort
-              </h1>
-              <article>
-                <h1 className="text-3xl font-bold mb-4">
-                  Algoritma Bubble Sort
-                </h1>
-
-                <p className="text-lg mb-8">
-                  Bubble sort adalah algoritma pengurutan sederhana yang bekerja
-                  dengan membandingkan dua elemen berdekatan dalam sebuah
-                  daftar. Jika elemen pertama lebih besar dari elemen kedua
-                  (untuk pengurutan ascending), maka keduanya ditukar. Proses
-                  ini diulang terus menerus hingga seluruh daftar terurut.
+              <article className="bg-white shadow-md rounded-lg p-6">
+                <h1 className="text-2xl font-bold mb-4">Bubble Sort</h1>
+                <p className="mb-4">
+                  Bubble sort adalah salah satu algoritma pengurutan yang paling
+                  sederhana. Algoritma ini bekerja dengan cara berulang kali
+                  membandingkan dan menukar elemen yang berdekatan jika berada
+                  dalam urutan yang salah.
                 </p>
 
-                <div className="mb-8">
-                  <h2 className="text-2xl font-bold mb-4">
-                    Contoh Kode (Python)
-                  </h2>
-                  <pre className="bg-gray-200 p-4 rounded-lg">
-                    {`
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1] :
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-`}
-                  </pre>
-                </div>
+                <h2 className="text-xl font-semibold mb-2">
+                  Cara Kerja Bubble Sort
+                </h2>
+                <ol className="list-decimal list-inside mb-4">
+                  <li>
+                    <strong>Bandingkan Elemen Berdekatan:</strong> Mulai dari
+                    elemen pertama, bandingkan elemen ini dengan elemen
+                    berikutnya.
+                  </li>
+                  <li>
+                    <strong>Tukar Jika Diperlukan:</strong> Jika elemen pertama
+                    lebih besar dari elemen berikutnya, tukar posisi mereka.
+                  </li>
+                  <li>
+                    <strong>Lanjutkan Ke Pasangan Berikutnya:</strong> Pindah ke
+                    pasangan elemen berikutnya dan ulangi langkah 1 dan 2.
+                  </li>
+                  <li>
+                    <strong>Ulangi Proses:</strong> Ulangi langkah-langkah di
+                    atas untuk seluruh daftar. Setiap kali satu elemen terbesar
+                    "mengapung" ke posisi akhir yang benar.
+                  </li>
+                  <li>
+                    <strong>Pengulangan:</strong> Lanjutkan proses ini sampai
+                    tidak ada lagi elemen yang perlu ditukar.
+                  </li>
+                </ol>
 
-                <div>
-                  <h2 className="text-2xl font-bold mb-4">
-                    Penjelasan Lebih Lanjut
-                  </h2>
-                  <ul>
-                    <li>
-                      <b>Sederhana:**</b> Mudah dipahami dan diimplementasikan.
-                    </li>
-                    <li>
-                      <b>Tidak efisien:**</b> Lambat untuk data yang besar.
-                    </li>
-                    <li>
-                      <b>Stabil:**</b> Tidak mengubah urutan elemen yang sama.
-                    </li>
-                  </ul>
-                </div>
+                <h2 className="text-xl font-semibold mb-2">Contoh Sederhana</h2>
+                <p className="mb-4">
+                  Misalkan kita punya daftar angka:{" "}
+                  <code className="bg-gray-200 p-1 rounded">
+                    [5, 2, 4, 6, 1, 3]
+                  </code>
+                </p>
+                <ol className="list-decimal list-inside mb-4">
+                  <li>
+                    Bandingkan elemen pertama (5) dengan elemen kedua (2)
+                    <ul className="list-disc list-inside ml-4">
+                      <li>Karena 5 lebih besar dari 2, tukar posisi mereka.</li>
+                      <li>
+                        Daftar sekarang menjadi:{" "}
+                        <code className="bg-gray-200 p-1 rounded">
+                          [2, 5, 4, 6, 1, 3]
+                        </code>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Bandingkan elemen kedua (5) dengan elemen ketiga (4)
+                    <ul className="list-disc list-inside ml-4">
+                      <li>Karena 5 lebih besar dari 4, tukar posisi mereka.</li>
+                      <li>
+                        Daftar sekarang menjadi:{" "}
+                        <code className="bg-gray-200 p-1 rounded">
+                          [2, 4, 5, 6, 1, 3]
+                        </code>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Lanjutkan membandingkan dan menukar elemen berdekatan:
+                    <ul className="list-disc list-inside ml-4">
+                      <li>Bandingkan 5 dengan 6, tidak ada perubahan.</li>
+                      <li>Bandingkan 6 dengan 1, tukar posisi mereka.</li>
+                      <li>
+                        Daftar sekarang menjadi:{" "}
+                        <code className="bg-gray-200 p-1 rounded">
+                          [2, 4, 5, 1, 6, 3]
+                        </code>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Bandingkan elemen terakhir (6) dengan elemen sebelumnya (3)
+                    <ul className="list-disc list-inside ml-4">
+                      <li>Karena 6 lebih besar dari 3, tukar posisi mereka.</li>
+                      <li>
+                        Daftar sekarang menjadi:{" "}
+                        <code className="bg-gray-200 p-1 rounded">
+                          [2, 4, 5, 1, 3, 6]
+                        </code>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Ulangi proses di atas untuk seluruh daftar hingga terurut
+                    sepenuhnya:
+                    <ul className="list-disc list-inside ml-4">
+                      <li>
+                        Daftar akhirnya menjadi:{" "}
+                        <code className="bg-gray-200 p-1 rounded">
+                          [1, 2, 3, 4, 5, 6]
+                        </code>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
               </article>
             </div>
             <div className="h-full    flex flex-col gap-3 ">
